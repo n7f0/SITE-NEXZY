@@ -1,6 +1,15 @@
 const express = require('express');
 const path = require('path');
-const { MercadoPagoConfig, Preference } = require('mercadopago');
+let MercadoPagoConfig, Preference;
+try {
+  const mp = require('mercadopago');
+  MercadoPagoConfig = mp.MercadoPagoConfig;
+  Preference = mp.Preference;
+  console.log('Mercado Pago SDK carregado');
+} catch (e) {
+  console.warn('Mercado Pago SDK não disponível:', e.message);
+}
+
 require('dotenv').config();
 
 const app = express();
@@ -9,15 +18,16 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(__dirname));
 
-// Configuração do Mercado Pago
-const client = new MercadoPagoConfig({
-  accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN,
-});
-
-// Rota para criar preferência de pagamento
+// Rota para criar preferência (se SDK disponível)
 app.post('/create-preference', async (req, res) => {
+  if (!MercadoPagoConfig || !Preference) {
+    return res.status(501).json({ error: 'Mercado Pago não configurado' });
+  }
   try {
     const { items } = req.body;
+    const client = new MercadoPagoConfig({
+      accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN || 'test_token',
+    });
     const preference = {
       items: items.map(item => ({
         title: item.name,
@@ -40,7 +50,7 @@ app.post('/create-preference', async (req, res) => {
   }
 });
 
-// Rota padrão para servir o index.html
+// Rota padrão
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
