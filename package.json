@@ -1,6 +1,6 @@
 {
   "name": "nexzy-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -8,6 +8,9 @@
   "dependencies": {
     "express": "^4.18.2",
     "mercadopago": "^2.1.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "pg": "^8.11.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0"
   }
 }
