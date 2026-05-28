@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-/* ========== SEU CSS ORIGINAL (mantido intacto) ========== */
+/* ========== SEU CSS ORIGINAL (mantido) ========== */
 :root {
   --bg: #060608;
   --glow-w: rgba(255,255,255,0.9);
@@ -179,7 +179,75 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; 
   .container{padding:0 20px}
 }
 @media(min-width:769px){.nav-links{display:flex!important}}
-/* ========== ESTILOS ADICIONAIS PARA PERFIL E DROPDOWN ========== */
+
+/* ========== CORREÇÃO DO MODAL (centralizado e sobreposto) ========== */
+.modal-login {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0,0,0,0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  display: none !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 999999 !important;
+}
+.modal-login.active {
+  display: flex !important;
+}
+.modal-login-content {
+  background: rgba(10,10,18,0.98) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 24px !important;
+  padding: 2rem !important;
+  width: 90% !important;
+  max-width: 420px !important;
+  color: white !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  position: relative !important;
+  z-index: 1000000 !important;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5) !important;
+}
+.modal-login-content input {
+  width: 100% !important;
+  padding: 12px !important;
+  margin: 10px 0 !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-family: inherit !important;
+}
+.modal-login-content button {
+  width: 100% !important;
+  margin-top: 16px !important;
+  padding: 12px !important;
+  background: rgba(255,255,255,0.15) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 40px !important;
+  color: white !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: 0.2s !important;
+}
+.modal-login-content button:hover {
+  background: rgba(255,255,255,0.25) !important;
+  box-shadow: 0 0 12px rgba(255,255,255,0.2) !important;
+}
+.toggle-auth {
+  text-align: center !important;
+  margin-top: 16px !important;
+  font-size: 0.85rem !important;
+  color: rgba(255,255,255,0.6) !important;
+  cursor: pointer !important;
+}
+.toggle-auth:hover {
+  color: white !important;
+}
+
+/* ========== ESTILOS DO DROPDOWN E PERFIL ========== */
 .user-menu { position: relative; display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .user-avatar { width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
 .user-avatar:hover { background: rgba(255,255,255,0.4); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
@@ -234,7 +302,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; 
 <div id="productModal" class="product-modal"><div class="product-modal-content"><span id="closeProductModal" class="modal-close-area">&times;</span><h2 id="modalProductTitle"></h2><div class="modal-price" id="modalProductPrice"></div><div class="product-description" id="modalProductDescription"></div><button id="modalAddToCartBtn" class="modal-add-cart">Adicionar ao Carrinho</button></div></div>
 
 <script>
-// ========== DADOS DOS PRODUTOS ==========
+// ========== DADOS DOS PRODUTOS (mesmo de antes) ==========
 const productsData={
   prod1:{id:"prod1",name:"Bot de Farm Fivem Completo",price:20,description:"🚀 BOT DE FARM FIVEM COMPLETO\n\n✅ O que você recebe:\n• Executável pronto (Windows)\n• Código fonte Python + Discord.py\n• Guia de instalação\n• Suporte Discord 30 dias\n\n📋 FUNCIONALIDADES:\n\n1️⃣ Farm de Produtos\n   - CHUMBO, CÁPSULA e PÓLVORA com prints\n   - Alertas de meta (600 unidades)\n\n2️⃣ Dinheiro Sujo com comprovante\n\n3️⃣ Fechamento Semanal\n   - 25% lavagem, 60% facção, 40% membro\n\n4️⃣ Compra e Venda de munição\n\n5️⃣ Sistema de Ações com pagamento proporcional\n\n6️⃣ Notificações de Lives (Twitch, YouTube, TikTok, Kick)\n\n7️⃣ Recrutamento com aprovação de admin\n\n8️⃣ Ranking geral de produção\n\n9️⃣ Canais privados por usuário\n\n🔟 Backup automático\n\n⚠️ Req: Windows 10/11, Python 3.8+, Token Discord\n🔒 Garantia 7 dias – reembolso total se não funcionar"},
   prod2:{id:"prod2",name:"Nexzy Ticket Bot",price:10,description:"📌 Descrição do Produto\n\nO Nexzy Ticket Bot é um sistema automatizado de atendimento por tickets para servidores Discord. Com ele, você organiza o suporte em duas categorias (Compras e Denúncias), agiliza o atendimento e dá mais profissionalismo ao seu servidor.\n\nIdeal para: Lojas de revenda, servidores de games, comunidades de suporte, projetos de criptomoedas, servidores de parcerias, etc.\n\n⚙️ Funcionalidades\n✅ Painel interativo com menu suspenso para escolher o tipo de ticket.\n✅ Categorias separadas (Compras / Denúncia) – cada ticket vai para sua categoria correta.\n✅ Canais privados – apenas o usuário e a equipe (staff) têm acesso.\n✅ Botão \"Fechar Ticket\" – com confirmação e exclusão automática do canal.\n✅ Cooldown inteligente – evita spam de tickets (tempo configurável).\n✅ Persistência total – os botões continuam funcionando mesmo após reiniciar o bot.\n✅ Comando único !painel para enviar o painel (somente administradores).\n✅ Código limpo e comentado – fácil de dar manutenção ou personalizar.\n✅ Configuração via arquivo .env – sem expor tokens ou IDs no código.\n\n🎁 O que você recebe\nCódigo-fonte completo (Python + discord.py)\nArquivo .env.example para configurar rapidamente\nrequirements.txt com todas as dependências\nREADME.md com instruções de instalação e uso\nSuporte via Discord por 7 dias (instalação e dúvidas)\n\n🧰 Requisitos\nServidor Discord com permissões de Gerenciar Canais\nPython 3.8 ou superior instalado\nBot criado no Discord Developer Portal"},
@@ -282,7 +350,7 @@ const menuToggle=$("menuToggle"),navLinks=$("navLinks");
 if(menuToggle){menuToggle.addEventListener("click",()=>navLinks.classList.toggle("show"));document.addEventListener("click",(e)=>{if(!navLinks.contains(e.target)&&!menuToggle.contains(e.target))navLinks.classList.remove("show")})}
 loadCart();
 
-// ========== SISTEMA DE LOGIN COMPLETO (com nickname, código de verificação e perfil) ==========
+// ========== SISTEMA DE LOGIN COMPLETO (com nickname, código e perfil) ==========
 let currentUser = null;
 let pendingEmail = null;
 let waitingForCode = false;
@@ -359,7 +427,6 @@ function resetModal() {
   waitingForCode = false;
   pendingEmail = null;
   if (!isLogin) {
-    // se estiver no modo "criar conta", deixa o botão como "Enviar código"
     document.getElementById('submitAuthBtn').innerText = 'Enviar código';
   } else {
     document.getElementById('submitAuthBtn').innerText = 'Entrar';
@@ -451,9 +518,7 @@ async function handleAuth() {
     }
   }
 }
-function updateUIAfterLogin() {
-  // Mostrar o dropdown já está ok, nenhum botão extra necessário
-}
+function updateUIAfterLogin() { /* nenhuma ação extra necessária */ }
 function logout() {
   localStorage.removeItem('nexzy_token');
   currentUser = null;
