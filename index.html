@@ -6,6 +6,7 @@
 <title>NEXZY | Criamos sistemas que fazem diferença</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root {
   --bg: #060608;
@@ -43,30 +44,19 @@ body::before{
   backdrop-filter:blur(2px);
   z-index:0;pointer-events:none;
 }
-/* ATMOSPHERIC GLOW BLOBS */
 .blob{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:1;opacity:0.22}
 .blob-1{width:600px;height:600px;background:radial-gradient(circle,rgba(160,180,255,0.5),transparent 70%);top:-200px;left:-200px}
 .blob-2{width:500px;height:500px;background:radial-gradient(circle,rgba(200,200,255,0.35),transparent 70%);bottom:-150px;right:-150px}
 .blob-3{width:400px;height:400px;background:radial-gradient(circle,rgba(180,160,255,0.3),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
-
-/* SCANLINES */
 .scanlines{position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,0.012) 2px,rgba(255,255,255,0.012) 3px);pointer-events:none;z-index:2}
-
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:#0a0a0f}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:4px}
 a{text-decoration:none;color:inherit}
-.container{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 28px;
-  position:relative;
-  z-index:5;
-}
+.container{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:5}
 section{padding:100px 0;position:relative;z-index:5}
 section+section{border-top:1px solid rgba(255,255,255,0.06)}
 
-/* ===== LOGO APENAS TEXTO, FONTE GORDINHA ===== */
 .logo-text {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 800;
@@ -91,7 +81,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
   display: inline-block;
 }
 
-/* ===== NAVBAR ===== */
 .navbar{
   position:sticky;
   top:0;
@@ -131,7 +120,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 .discord-icon:hover{color:var(--white);filter:drop-shadow(0 0 8px rgba(255,255,255,0.8))}
 .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
 
-/* ===== HERO ===== */
 #home{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0}
 .hero-content{position:relative;z-index:5}
 .hero-glow-ring{
@@ -178,7 +166,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 }
 .btn-glow:hover::before{opacity:1}
 
-/* HERO ANIMATIONS */
 .hero-content>*{animation:fadeUp .9s ease both}
 .hero-glow-ring{animation-delay:0s}
 .hero-logo-text{animation-delay:.15s}
@@ -188,7 +175,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 .hero-cta{animation-delay:.66s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== SECTION HEADERS ===== */
 .section-eyebrow{
   font-family:"Rajdhani",sans-serif;font-size:.7rem;letter-spacing:.38em;
   text-transform:uppercase;color:rgba(255,255,255,0.3);
@@ -202,7 +188,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 }
 .section-sub{text-align:center;color:rgba(255,255,255,0.38);max-width:500px;margin:0 auto 72px;font-size:.93rem;line-height:1.65}
 
-/* ===== PRODUCTS VITRINE ===== */
 .vitrine-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -321,7 +306,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
   text-shadow:0 0 10px rgba(255,255,255,0.6);
 }
 
-/* ===== ABOUT ===== */
 .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:center}
 .about-eyebrow{font-family:"Rajdhani",sans-serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px}
 .about-heading{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.5rem,4.5vw,3.6rem);line-height:.95;letter-spacing:.04em;color:var(--white);margin-bottom:28px;text-shadow:0 0 30px rgba(200,210,255,0.25)}
@@ -347,7 +331,6 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 .stat-number{font-family:"Bebas Neue",sans-serif;font-size:3.2rem;color:var(--white);letter-spacing:.03em;line-height:1;text-shadow:0 0 20px rgba(200,210,255,0.4)}
 .stat-label{font-family:"Rajdhani",sans-serif;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:5px}
 
-/* ===== FOOTER ===== */
 footer{
   position:relative;
   z-index:5;
@@ -429,7 +412,6 @@ footer .container {
   .footer-social { gap: 20px; }
 }
 
-/* ===== CART OVERLAY ===== */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:1999;opacity:0;visibility:hidden;transition:all .3s;pointer-events:none}
 .cart-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
 .cart-drawer{
@@ -483,7 +465,6 @@ footer .container {
   text-shadow:0 0 12px rgba(255,255,255,0.7);
 }
 
-/* ===== MODAL ===== */
 .product-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);z-index:3000;justify-content:center;align-items:center;padding:20px}
 .product-modal-content{
   background:rgba(12,12,20,0.95);backdrop-filter:blur(30px);
@@ -506,7 +487,6 @@ footer .container {
 }
 .modal-add-cart:hover{background:rgba(255,255,255,0.13);border-color:rgba(255,255,255,0.5);box-shadow:0 0 24px rgba(255,255,255,0.12);text-shadow:0 0 10px rgba(255,255,255,0.7)}
 
-/* RESPONSIVE */
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
 @media(max-width:768px){
   .navbar{padding:0 20px}
@@ -582,7 +562,6 @@ footer .container {
     <h2 class="section-title">Nossos Produtos</h2>
     <p class="section-sub">Clique em "Ver detalhes" para mais informações e adicionar ao carrinho.</p>
     <div class="vitrine-grid">
-      <!-- Produto 1: Bot de Farm Fivem -->
       <div class="vitrine-card">
         <span class="card-num">01</span>
         <div class="card-orb"></div>
@@ -593,7 +572,6 @@ footer .container {
         <div class="card-price">R$ 20,00</div>
         <button class="vitrine-btn" data-id="prod1">Ver detalhes →</button>
       </div>
-      <!-- Produto 2: Nexzy Ticket Bot -->
       <div class="vitrine-card">
         <span class="card-num">02</span>
         <div class="card-orb"></div>
@@ -604,7 +582,6 @@ footer .container {
         <div class="card-price">R$ 10,00</div>
         <button class="vitrine-btn" data-id="prod2">Ver detalhes →</button>
       </div>
-      <!-- Produto 3: Bot de Partidas Free Fire (substituído) -->
       <div class="vitrine-card">
         <span class="card-num">03</span>
         <div class="card-orb"></div>
@@ -704,12 +681,44 @@ function addToCart(p){const e=cart.find(i=>i.id===p.id);e?e.quantity++:cart.push
 function openCart(){$("cartDrawer").classList.add("open");$("cartOverlay").classList.add("active");document.body.style.overflow="hidden"}
 function closeCartFn(){$("cartDrawer").classList.remove("open");$("cartOverlay").classList.remove("active");document.body.style.overflow=""}
 $("bagIcon").addEventListener("click",openCart);$("closeCart").addEventListener("click",closeCartFn);$("cartOverlay").addEventListener("click",closeCartFn);
-$("checkoutBtn").addEventListener("click",()=>{
-  if(!cart.length){alert("Sacola vazia.");return}
-  const t=cart.reduce((s,i)=>s+i.price*i.quantity,0);
-  alert("✅ Compra finalizada!\nTotal: R$ "+t.toFixed(2)+"\nObrigado pela confiança na NEXZY!");
-  cart=[];updateCartUI();saveCart();closeCartFn();
+
+// Substituindo a função do checkout para integração com Mercado Pago
+$("checkoutBtn").addEventListener("click", async () => {
+  if (!cart.length) {
+    alert("Sacola vazia.");
+    return;
+  }
+
+  // Verifica login via Supabase (adicionado abaixo)
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    alert("Você precisa estar logado para finalizar a compra.");
+    return;
+  }
+
+  const items = cart.map(item => ({
+    name: item.name,
+    quantity: item.quantity,
+    price: item.price,
+  }));
+
+  try {
+    const response = await fetch('/create-preference', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items }),
+    });
+    const data = await response.json();
+    if (data.init_point) {
+      window.location.href = data.init_point; // redireciona para o checkout do Mercado Pago
+    } else {
+      alert("Erro ao gerar link de pagamento. Tente novamente.");
+    }
+  } catch (err) {
+    alert("Erro de conexão com o servidor.");
+  }
 });
+
 let currentProduct=null;
 document.querySelectorAll(".vitrine-btn").forEach(b=>b.addEventListener("click",()=>{
   const p=productsData[b.dataset.id];if(!p)return;
@@ -728,6 +737,84 @@ document.querySelectorAll(".vitrine-card").forEach(c=>obs.observe(c));
 const menuToggle=$("menuToggle"),navLinks=$("navLinks");
 if(menuToggle){menuToggle.addEventListener("click",()=>navLinks.classList.toggle("show"));document.addEventListener("click",(e)=>{if(!navLinks.contains(e.target)&&!menuToggle.contains(e.target))navLinks.classList.remove("show")})}
 loadCart();
+
+// ========== SUPABASE LOGIN COM GOOGLE ==========
+const supabaseUrl = 'https://navgpdznbldiswfhelii.supabase.co';
+const supabaseAnonKey = 'sb_publishable_J5VOMH58TtJxrIT1khd8vg_kmgEw0Sx';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+
+function hideStore() {
+  document.querySelectorAll('section, footer, .navbar, #cartDrawer, #productModal').forEach(el => {
+    if (el) el.style.display = 'none';
+  });
+}
+function showStore() {
+  document.querySelectorAll('section, footer, .navbar, #cartDrawer, #productModal').forEach(el => {
+    if (el) el.style.display = '';
+  });
+  document.getElementById('cartDrawer')?.classList.remove('open');
+}
+
+const loginPanel = document.createElement('div');
+loginPanel.id = 'login-panel';
+loginPanel.style.cssText = `
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.9); backdrop-filter: blur(20px);
+  padding: 2rem; border-radius: 28px; border: 1px solid rgba(255,255,255,0.2);
+  z-index: 10000; text-align: center; width: 320px;
+  font-family: 'Space Grotesk', sans-serif;
+`;
+loginPanel.innerHTML = `
+  <h2 style="color: white; font-family: 'Bebas Neue'; margin-bottom: 20px;">Bem-vindo à NEXZY</h2>
+  <button id="google-login" style="
+    background: white; color: #1a1a2e; border: none;
+    padding: 12px 20px; border-radius: 40px; font-weight: bold; font-size: 1rem;
+    width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px;
+  ">
+    <i class="fab fa-google"></i> Entrar com Google
+  </button>
+  <p style="color: #aaa; margin-top: 20px; font-size: 12px;">Acesso seguro e rápido</p>
+`;
+document.body.appendChild(loginPanel);
+
+let logoutBtn = null;
+
+async function handleGoogleLogin() {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin }
+  });
+  if (error) alert('Erro ao tentar login: ' + error.message);
+}
+
+document.getElementById('google-login')?.addEventListener('click', handleGoogleLogin);
+
+async function checkUser() {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (user) {
+    loginPanel.style.display = 'none';
+    showStore();
+    if (logoutBtn) logoutBtn.remove();
+    logoutBtn = document.createElement('button');
+    logoutBtn.innerText = 'Sair';
+    logoutBtn.style.cssText = `
+      position: fixed; bottom: 24px; right: 24px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+      color: white; padding: 8px 18px; border-radius: 40px;
+      cursor: pointer; z-index: 1000; font-family: 'Rajdhani', sans-serif;
+      font-weight: 600; letter-spacing: 1px; backdrop-filter: blur(4px);
+    `;
+    logoutBtn.onclick = async () => {
+      await supabase.auth.signOut();
+      window.location.reload();
+    };
+    document.body.appendChild(logoutBtn);
+  } else {
+    hideStore();
+    loginPanel.style.display = 'block';
+  }
+}
+checkUser();
 </script>
 </body>
 </html>
