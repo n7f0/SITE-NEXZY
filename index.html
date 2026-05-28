@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
+/* ========== SEU CSS ORIGINAL (mantido intacto) ========== */
 :root {
   --bg: #060608;
   --glow-w: rgba(255,255,255,0.9);
@@ -19,13 +20,7 @@
   --gray: #7a7f8e;
   --dim: #3a3d4a;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body{
   background: var(--bg);
   background-image: url("FUNDO SITE.png");
@@ -43,83 +38,25 @@ body::before{
   backdrop-filter:blur(2px);
   z-index:0;pointer-events:none;
 }
-/* ATMOSPHERIC GLOW BLOBS */
 .blob{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:1;opacity:0.22}
 .blob-1{width:600px;height:600px;background:radial-gradient(circle,rgba(160,180,255,0.5),transparent 70%);top:-200px;left:-200px}
 .blob-2{width:500px;height:500px;background:radial-gradient(circle,rgba(200,200,255,0.35),transparent 70%);bottom:-150px;right:-150px}
 .blob-3{width:400px;height:400px;background:radial-gradient(circle,rgba(180,160,255,0.3),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
-
-/* SCANLINES */
 .scanlines{position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,0.012) 2px,rgba(255,255,255,0.012) 3px);pointer-events:none;z-index:2}
-
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:#0a0a0f}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:4px}
 a{text-decoration:none;color:inherit}
-.container{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 28px;
-  position:relative;
-  z-index:5;
-}
+.container{ max-width:1280px; margin:0 auto; padding:0 28px; position:relative; z-index:5; }
 section{padding:100px 0;position:relative;z-index:5}
 section+section{border-top:1px solid rgba(255,255,255,0.06)}
-
-/* ===== LOGO APENAS TEXTO, FONTE GORDINHA ===== */
-.logo-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 1.55rem;
-  color: var(--white);
-  text-shadow: 0 0 8px rgba(255,255,255,0.5);
-  transition: all 0.2s;
-}
-.nav-logo:hover .logo-text {
-  text-shadow: 0 0 12px rgba(255,255,255,0.9);
-}
-.hero-logo-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  color: var(--white);
-  text-shadow: 0 0 30px rgba(200,210,255,0.8), 0 0 60px rgba(180,190,255,0.5);
-  display: inline-block;
-}
-
-/* ===== NAVBAR ===== */
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(6,6,10,0.7);
-  backdrop-filter:blur(24px) saturate(180%);
-  padding:0 32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:70px;
-}
-.navbar::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
+.logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; font-size: 1.55rem; color: var(--white); text-shadow: 0 0 8px rgba(255,255,255,0.5); transition: all 0.2s; }
+.nav-logo:hover .logo-text { text-shadow: 0 0 12px rgba(255,255,255,0.9); }
+.hero-logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; font-size: clamp(2.8rem, 8vw, 5rem); color: var(--white); text-shadow: 0 0 30px rgba(200,210,255,0.8), 0 0 60px rgba(180,190,255,0.5); display: inline-block; }
+.navbar{ position:sticky; top:0; z-index:100; background:rgba(6,6,10,0.7); backdrop-filter:blur(24px) saturate(180%); padding:0 32px; display:flex; align-items:center; justify-content:space-between; height:70px; }
+.navbar::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: rgba(255, 255, 255, 0.08); pointer-events: none; }
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{
-  font-family:"Rajdhani",sans-serif;font-weight:600;font-size:.9rem;
-  letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);
-  transition:all .25s;position:relative;
-}
+.nav-links a{ font-family:"Rajdhani",sans-serif;font-weight:600;font-size:.9rem; letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5); transition:all .25s;position:relative; }
 .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--white);box-shadow:0 0 8px var(--white);transition:width .3s}
 .nav-links a:hover{color:var(--white);text-shadow:0 0 18px rgba(255,255,255,0.8)}
 .nav-links a:hover::after{width:100%}
@@ -130,55 +67,17 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 .discord-icon{font-size:1.3rem;color:rgba(255,255,255,0.5);cursor:pointer;transition:all .25s}
 .discord-icon:hover{color:var(--white);filter:drop-shadow(0 0 8px rgba(255,255,255,0.8))}
 .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
-
-/* ===== HERO ===== */
 #home{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0}
 .hero-content{position:relative;z-index:5}
-.hero-glow-ring{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:600px;height:300px;
-  background:radial-gradient(ellipse at center,rgba(180,190,255,0.12) 0%,transparent 70%);
-  pointer-events:none;
-  animation:pulseRing 4s ease-in-out infinite;
-}
+.hero-glow-ring{ position:absolute;top:50%;left:50%;transform:translate(-50%,-50%); width:600px;height:300px; background:radial-gradient(ellipse at center,rgba(180,190,255,0.12) 0%,transparent 70%); pointer-events:none; animation:pulseRing 4s ease-in-out infinite; }
 @keyframes pulseRing{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
-.hero-title{
-  font-family:"Bebas Neue",sans-serif;font-size:clamp(2rem,6vw,4rem);
-  letter-spacing:.06em;color:var(--white);line-height:.9;
-  text-shadow:0 0 40px rgba(200,210,255,0.5),0 0 80px rgba(180,190,255,0.2);
-  margin-bottom:20px;
-}
-.hero-sub{
-  color:rgba(255,255,255,0.4);font-size:.95rem;max-width:420px;
-  margin:0 auto 40px;line-height:1.7;
-}
+.hero-title{ font-family:"Bebas Neue",sans-serif;font-size:clamp(2rem,6vw,4rem); letter-spacing:.06em;color:var(--white);line-height:.9; text-shadow:0 0 40px rgba(200,210,255,0.5),0 0 80px rgba(180,190,255,0.2); margin-bottom:20px; }
+.hero-sub{ color:rgba(255,255,255,0.4);font-size:.95rem;max-width:420px; margin:0 auto 40px;line-height:1.7; }
 .hero-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);margin:0 auto 40px;box-shadow:0 0 12px rgba(255,255,255,0.3)}
-.btn-glow{
-  display:inline-block;
-  background:rgba(255,255,255,0.06);
-  color:var(--white);
-  font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem;
-  letter-spacing:.22em;text-transform:uppercase;
-  padding:14px 40px;border:1px solid rgba(255,255,255,0.25);
-  border-radius:2px;cursor:pointer;
-  transition:all .3s;position:relative;overflow:hidden;
-  backdrop-filter:blur(10px);
-}
-.btn-glow::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.btn-glow:hover{
-  background:rgba(255,255,255,0.1);
-  border-color:rgba(255,255,255,0.6);
-  box-shadow:0 0 20px rgba(255,255,255,0.2),0 0 40px rgba(200,210,255,0.1),inset 0 0 20px rgba(255,255,255,0.04);
-  text-shadow:0 0 12px rgba(255,255,255,0.8);
-  transform:translateY(-2px);
-}
+.btn-glow{ display:inline-block; background:rgba(255,255,255,0.06); color:var(--white); font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem; letter-spacing:.22em;text-transform:uppercase; padding:14px 40px;border:1px solid rgba(255,255,255,0.25); border-radius:2px;cursor:pointer; transition:all .3s;position:relative;overflow:hidden; backdrop-filter:blur(10px); }
+.btn-glow::before{ content:"";position:absolute;inset:0; background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent); opacity:0;transition:opacity .3s; }
+.btn-glow:hover{ background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.6); box-shadow:0 0 20px rgba(255,255,255,0.2),0 0 40px rgba(200,210,255,0.1),inset 0 0 20px rgba(255,255,255,0.04); text-shadow:0 0 12px rgba(255,255,255,0.8); transform:translateY(-2px); }
 .btn-glow:hover::before{opacity:1}
-
-/* HERO ANIMATIONS */
 .hero-content>*{animation:fadeUp .9s ease both}
 .hero-glow-ring{animation-delay:0s}
 .hero-logo-text{animation-delay:.15s}
@@ -187,276 +86,63 @@ section+section{border-top:1px solid rgba(255,255,255,0.06)}
 .hero-divider{animation-delay:.54s}
 .hero-cta{animation-delay:.66s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-
-/* ===== SECTION HEADERS ===== */
-.section-eyebrow{
-  font-family:"Rajdhani",sans-serif;font-size:.7rem;letter-spacing:.38em;
-  text-transform:uppercase;color:rgba(255,255,255,0.3);
-  text-align:center;margin-bottom:14px;
-}
-.section-title{
-  font-family:"Bebas Neue",sans-serif;font-size:clamp(2.6rem,5.5vw,4rem);
-  letter-spacing:.05em;text-align:center;color:var(--white);line-height:.95;
-  margin-bottom:14px;
-  text-shadow:0 0 30px rgba(200,210,255,0.3);
-}
+.section-eyebrow{ font-family:"Rajdhani",sans-serif;font-size:.7rem;letter-spacing:.38em; text-transform:uppercase;color:rgba(255,255,255,0.3); text-align:center;margin-bottom:14px; }
+.section-title{ font-family:"Bebas Neue",sans-serif;font-size:clamp(2.6rem,5.5vw,4rem); letter-spacing:.05em;text-align:center;color:var(--white);line-height:.95; margin-bottom:14px; text-shadow:0 0 30px rgba(200,210,255,0.3); }
 .section-sub{text-align:center;color:rgba(255,255,255,0.38);max-width:500px;margin:0 auto 72px;font-size:.93rem;line-height:1.65}
-
-/* ===== PRODUCTS VITRINE ===== */
-.vitrine-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:24px;
-}
-.vitrine-card{
-  position:relative;
-  background:rgba(255,255,255,0.025);
-  backdrop-filter:blur(20px) saturate(140%);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  padding:2.4rem 2rem 2rem;
-  text-align:center;
-  overflow:hidden;
-  opacity:0;transform:translateY(24px);
-  transition:opacity .6s ease,transform .6s ease,border-color .4s,box-shadow .4s,background .4s;
-  cursor:default;
-}
-.vitrine-card::before{
-  content:"";
-  position:absolute;
-  bottom:-60px;left:50%;transform:translateX(-50%);
-  width:60%;height:120px;
-  background:radial-gradient(ellipse at center,rgba(200,210,255,0.18),transparent 70%);
-  transition:opacity .4s,width .4s;
-  pointer-events:none;
-}
-.vitrine-card::after{
-  content:"";
-  position:absolute;
-  top:0;left:-100%;
-  width:60%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);
-  transition:left .7s ease;
-}
-.vitrine-card:hover{
-  background:rgba(255,255,255,0.06);
-  border-color:rgba(255,255,255,0.3);
-  box-shadow:0 0 30px rgba(200,210,255,0.12),0 0 60px rgba(180,190,255,0.07),0 20px 60px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.12);
-  transform:translateY(-8px);
-}
+.vitrine-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+.vitrine-card{ position:relative; background:rgba(255,255,255,0.025); backdrop-filter:blur(20px) saturate(140%); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:2.4rem 2rem 2rem; text-align:center; overflow:hidden; opacity:0;transform:translateY(24px); transition:opacity .6s ease,transform .6s ease,border-color .4s,box-shadow .4s,background .4s; cursor:default; }
+.vitrine-card::before{ content:""; position:absolute; bottom:-60px;left:50%;transform:translateX(-50%); width:60%;height:120px; background:radial-gradient(ellipse at center,rgba(200,210,255,0.18),transparent 70%); transition:opacity .4s,width .4s; pointer-events:none; }
+.vitrine-card::after{ content:""; position:absolute; top:0;left:-100%; width:60%;height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent); transition:left .7s ease; }
+.vitrine-card:hover{ background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.3); box-shadow:0 0 30px rgba(200,210,255,0.12),0 0 60px rgba(180,190,255,0.07),0 20px 60px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.12); transform:translateY(-8px); }
 .vitrine-card:hover::before{width:80%;opacity:1.5}
 .vitrine-card:hover::after{left:140%}
-.card-orb{
-  position:absolute;top:30px;left:50%;transform:translateX(-50%);
-  width:120px;height:120px;
-  background:radial-gradient(circle,rgba(200,210,255,0.1),transparent 70%);
-  border-radius:50%;
-  pointer-events:none;
-  transition:all .4s;
-}
+.card-orb{ position:absolute;top:30px;left:50%;transform:translateX(-50%); width:120px;height:120px; background:radial-gradient(circle,rgba(200,210,255,0.1),transparent 70%); border-radius:50%; pointer-events:none; transition:all .4s; }
 .vitrine-card:hover .card-orb{width:160px;height:160px;opacity:1.3}
-.card-icon{
-  position:relative;z-index:2;
-  width:64px;height:64px;margin:0 auto 1.6rem;
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:16px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;color:rgba(255,255,255,0.8);
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(8px);
-  transition:all .3s;
-  box-shadow:0 0 0 rgba(255,255,255,0);
-}
-.vitrine-card:hover .card-icon{
-  border-color:rgba(255,255,255,0.4);
-  color:var(--white);
-  box-shadow:0 0 20px rgba(200,210,255,0.25),0 0 40px rgba(180,190,255,0.1);
-  background:rgba(255,255,255,0.08);
-}
-.card-num{
-  position:absolute;top:18px;right:22px;
-  font-family:"Bebas Neue",sans-serif;font-size:3.5rem;
-  color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;
-  transition:color .3s;
-}
+.card-icon{ position:relative;z-index:2; width:64px;height:64px;margin:0 auto 1.6rem; border:1px solid rgba(255,255,255,0.15); border-radius:16px; display:flex;align-items:center;justify-content:center; font-size:1.6rem;color:rgba(255,255,255,0.8); background:rgba(255,255,255,0.04); backdrop-filter:blur(8px); transition:all .3s; box-shadow:0 0 0 rgba(255,255,255,0); }
+.vitrine-card:hover .card-icon{ border-color:rgba(255,255,255,0.4); color:var(--white); box-shadow:0 0 20px rgba(200,210,255,0.25),0 0 40px rgba(180,190,255,0.1); background:rgba(255,255,255,0.08); }
+.card-num{ position:absolute;top:18px;right:22px; font-family:"Bebas Neue",sans-serif;font-size:3.5rem; color:rgba(255,255,255,0.04);line-height:1;pointer-events:none; transition:color .3s; }
 .vitrine-card:hover .card-num{color:rgba(255,255,255,0.07)}
-.vitrine-card h3{
-  font-family:"Rajdhani",sans-serif;font-weight:700;font-size:1.35rem;
-  letter-spacing:.04em;text-transform:uppercase;
-  color:rgba(255,255,255,0.9);margin-bottom:10px;line-height:1.15;
-  position:relative;z-index:2;
-}
-.vitrine-card p{
-  color:rgba(255,255,255,0.38);font-size:.88rem;line-height:1.65;
-  margin-bottom:1.6rem;position:relative;z-index:2;
-}
-.card-price{
-  font-family:"Bebas Neue",sans-serif;font-size:2.2rem;
-  color:var(--white);letter-spacing:.05em;margin-bottom:1.6rem;
-  position:relative;z-index:2;
-  text-shadow:0 0 20px rgba(200,210,255,0.4);
-  transition:text-shadow .3s;
-}
+.vitrine-card h3{ font-family:"Rajdhani",sans-serif;font-weight:700;font-size:1.35rem; letter-spacing:.04em;text-transform:uppercase; color:rgba(255,255,255,0.9);margin-bottom:10px;line-height:1.15; position:relative;z-index:2; }
+.vitrine-card p{ color:rgba(255,255,255,0.38);font-size:.88rem;line-height:1.65; margin-bottom:1.6rem;position:relative;z-index:2; }
+.card-price{ font-family:"Bebas Neue",sans-serif;font-size:2.2rem; color:var(--white);letter-spacing:.05em;margin-bottom:1.6rem; position:relative;z-index:2; text-shadow:0 0 20px rgba(200,210,255,0.4); transition:text-shadow .3s; }
 .vitrine-card:hover .card-price{text-shadow:0 0 30px rgba(200,210,255,0.7)}
-.card-divider{
-  width:40px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
-  margin:0 auto 1.4rem;box-shadow:0 0 8px rgba(255,255,255,0.2);
-  position:relative;z-index:2;
-}
-.vitrine-btn{
-  position:relative;z-index:2;
-  font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.8rem;
-  letter-spacing:.2em;text-transform:uppercase;
-  background:rgba(255,255,255,0.06);
-  color:rgba(255,255,255,0.75);
-  border:1px solid rgba(255,255,255,0.2);
-  padding:10px 28px;border-radius:2px;cursor:pointer;
-  transition:all .3s;backdrop-filter:blur(8px);
-}
-.vitrine-btn:hover{
-  background:rgba(255,255,255,0.12);
-  color:var(--white);border-color:rgba(255,255,255,0.55);
-  box-shadow:0 0 16px rgba(255,255,255,0.15),0 0 30px rgba(200,210,255,0.08);
-  text-shadow:0 0 10px rgba(255,255,255,0.6);
-}
-
-/* ===== ABOUT ===== */
+.card-divider{ width:40px;height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); margin:0 auto 1.4rem;box-shadow:0 0 8px rgba(255,255,255,0.2); position:relative;z-index:2; }
+.vitrine-btn{ position:relative;z-index:2; font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.8rem; letter-spacing:.2em;text-transform:uppercase; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.75); border:1px solid rgba(255,255,255,0.2); padding:10px 28px;border-radius:2px;cursor:pointer; transition:all .3s;backdrop-filter:blur(8px); }
+.vitrine-btn:hover{ background:rgba(255,255,255,0.12); color:var(--white);border-color:rgba(255,255,255,0.55); box-shadow:0 0 16px rgba(255,255,255,0.15),0 0 30px rgba(200,210,255,0.08); text-shadow:0 0 10px rgba(255,255,255,0.6); }
 .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:center}
 .about-eyebrow{font-family:"Rajdhani",sans-serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px}
 .about-heading{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.5rem,4.5vw,3.6rem);line-height:.95;letter-spacing:.04em;color:var(--white);margin-bottom:28px;text-shadow:0 0 30px rgba(200,210,255,0.25)}
 .about-text p{color:rgba(255,255,255,0.42);font-size:.93rem;line-height:1.8;margin-bottom:18px}
 .stats-vitrine{display:flex;flex-direction:column;gap:0}
-.stat-glass{
-  padding:28px 32px;
-  background:rgba(255,255,255,0.025);
-  backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,0.08);
-  border-bottom:none;
-  transition:all .3s;position:relative;overflow:hidden;
-}
+.stat-glass{ padding:28px 32px; background:rgba(255,255,255,0.025); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.08); border-bottom:none; transition:all .3s;position:relative;overflow:hidden; }
 .stat-glass:first-child{border-radius:16px 16px 0 0}
 .stat-glass:last-child{border-bottom:1px solid rgba(255,255,255,0.08);border-radius:0 0 16px 16px}
-.stat-glass::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse at 0% 50%,rgba(200,210,255,0.06),transparent 70%);
-  opacity:0;transition:opacity .3s;
-}
+.stat-glass::before{ content:"";position:absolute;inset:0; background:radial-gradient(ellipse at 0% 50%,rgba(200,210,255,0.06),transparent 70%); opacity:0;transition:opacity .3s; }
 .stat-glass:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.18)}
 .stat-glass:hover::before{opacity:1}
 .stat-number{font-family:"Bebas Neue",sans-serif;font-size:3.2rem;color:var(--white);letter-spacing:.03em;line-height:1;text-shadow:0 0 20px rgba(200,210,255,0.4)}
 .stat-label{font-family:"Rajdhani",sans-serif;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:5px}
-
-/* ===== FOOTER ===== */
-footer{
-  position:relative;
-  z-index:5;
-  background:rgba(4,4,8,0.94);
-  backdrop-filter:blur(12px);
-  padding:48px 0 40px;
-  margin-top:20px;
-}
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  pointer-events: none;
-}
-.footer-simple {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-.footer-nav {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.footer-nav a {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  transition: color 0.2s;
-}
-.footer-nav a:hover {
-  color: var(--white);
-  text-shadow: 0 0 8px rgba(255,255,255,0.5);
-}
-.footer-social {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: center;
-}
-.footer-social a {
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.35);
-  transition: all 0.2s;
-}
-.footer-social a:hover {
-  color: var(--white);
-  transform: translateY(-2px);
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
-}
-.footer-copyright {
-  text-align: center;
-  margin-top: 8px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  width: 100%;
-}
-.footer-copyright .copyright {
-  font-family: "Rajdhani", sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-}
-footer .container {
-  padding: 0 28px;
-}
-@media (max-width: 768px) {
-  .footer-nav { gap: 28px; }
-  .footer-social { gap: 20px; }
-}
-
-/* ===== CART OVERLAY ===== */
+footer{ position:relative; z-index:5; background:rgba(4,4,8,0.94); backdrop-filter:blur(12px); padding:48px 0 40px; margin-top:20px; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); pointer-events: none; }
+.footer-simple { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.footer-nav { display: flex; gap: 48px; flex-wrap: wrap; justify-content: center; }
+.footer-nav a { font-family: "Rajdhani", sans-serif; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.footer-nav a:hover { color: var(--white); text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+.footer-social { display: flex; gap: 24px; align-items: center; justify-content: center; }
+.footer-social a { font-size: 1.3rem; color: rgba(255,255,255,0.35); transition: all 0.2s; }
+.footer-social a:hover { color: var(--white); transform: translateY(-2px); filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
+.footer-copyright { text-align: center; margin-top: 8px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; }
+.footer-copyright .copyright { font-family: "Rajdhani", sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:1999;opacity:0;visibility:hidden;transition:all .3s;pointer-events:none}
 .cart-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
-.cart-drawer{
-  position:fixed;top:0;right:-520px;width:440px;max-width:94%;height:100%;
-  background:rgba(8,8,14,0.95);backdrop-filter:blur(32px);
-  border-left:1px solid rgba(255,255,255,0.1);
-  z-index:2000;transition:right .45s cubic-bezier(.2,.9,.4,1.05);
-  display:flex;flex-direction:column;
-  box-shadow:-20px 0 60px rgba(0,0,0,.8);
-}
+.cart-drawer{ position:fixed;top:0;right:-520px;width:440px;max-width:94%;height:100%; background:rgba(8,8,14,0.95);backdrop-filter:blur(32px); border-left:1px solid rgba(255,255,255,0.1); z-index:2000;transition:right .45s cubic-bezier(.2,.9,.4,1.05); display:flex;flex-direction:column; box-shadow:-20px 0 60px rgba(0,0,0,.8); }
 .cart-drawer.open{right:0}
 .cart-header{display:flex;justify-content:space-between;align-items:center;padding:28px 24px;border-bottom:1px solid rgba(255,255,255,0.07)}
 .cart-header span{font-family:"Bebas Neue",sans-serif;font-size:1.6rem;letter-spacing:.1em;color:var(--white);text-shadow:0 0 20px rgba(200,210,255,0.4)}
-.close-cart{
-  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
-  color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px;
-  font-size:1.2rem;cursor:pointer;transition:all .2s;
-  display:flex;align-items:center;justify-content:center;
-}
+.close-cart{ background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:8px; font-size:1.2rem;cursor:pointer;transition:all .2s; display:flex;align-items:center;justify-content:center; }
 .close-cart:hover{border-color:rgba(255,255,255,0.4);color:var(--white);box-shadow:0 0 12px rgba(255,255,255,0.1)}
 .cart-items{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px}
-.cart-item{
-  background:rgba(255,255,255,0.04);backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.08);border-radius:12px;
-  padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;
-  transition:all .2s;
-}
+.cart-item{ background:rgba(255,255,255,0.04);backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08);border-radius:12px; padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px; transition:all .2s; }
 .cart-item:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.18)}
 .cart-item-info strong{display:block;font-family:"Rajdhani",sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
 .cart-item-price{font-size:.85rem;color:rgba(255,255,255,0.35)}
@@ -469,61 +155,22 @@ footer .container {
 .cart-footer{padding:20px;border-top:1px solid rgba(255,255,255,0.07)}
 .cart-total{font-family:"Rajdhani",sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:16px;text-align:right}
 .cart-total span{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;color:var(--white);letter-spacing:.04em;text-shadow:0 0 20px rgba(200,210,255,0.5)}
-.checkout-btn{
-  width:100%;
-  background:rgba(255,255,255,0.07);color:var(--white);
-  font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem;
-  letter-spacing:.25em;text-transform:uppercase;
-  border:1px solid rgba(255,255,255,0.2);padding:16px;border-radius:4px;cursor:pointer;
-  transition:all .3s;backdrop-filter:blur(10px);
-}
-.checkout-btn:hover{
-  background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.5);
-  box-shadow:0 0 24px rgba(255,255,255,0.12),0 0 48px rgba(200,210,255,0.07);
-  text-shadow:0 0 12px rgba(255,255,255,0.7);
-}
-
-/* ===== MODAL ===== */
+.checkout-btn{ width:100%; background:rgba(255,255,255,0.07);color:var(--white); font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem; letter-spacing:.25em;text-transform:uppercase; border:1px solid rgba(255,255,255,0.2);padding:16px;border-radius:4px;cursor:pointer; transition:all .3s;backdrop-filter:blur(10px); }
+.checkout-btn:hover{ background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.5); box-shadow:0 0 24px rgba(255,255,255,0.12),0 0 48px rgba(200,210,255,0.07); text-shadow:0 0 12px rgba(255,255,255,0.7); }
 .product-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);z-index:3000;justify-content:center;align-items:center;padding:20px}
-.product-modal-content{
-  background:rgba(12,12,20,0.95);backdrop-filter:blur(30px);
-  border:1px solid rgba(255,255,255,0.14);border-radius:20px;
-  padding:2.5rem;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;
-  position:relative;
-  box-shadow:0 0 60px rgba(180,190,255,0.08),0 40px 80px rgba(0,0,0,.8);
-}
+.product-modal-content{ background:rgba(12,12,20,0.95);backdrop-filter:blur(30px); border:1px solid rgba(255,255,255,0.14);border-radius:20px; padding:2.5rem;max-width:640px;width:100%;max-height:88vh;overflow-y:auto; position:relative; box-shadow:0 0 60px rgba(180,190,255,0.08),0 40px 80px rgba(0,0,0,.8); }
 .product-modal-content::before{content:"";position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);box-shadow:0 0 10px rgba(255,255,255,0.3)}
 .modal-close-area{position:absolute;top:18px;right:18px;font-size:1.4rem;cursor:pointer;color:rgba(255,255,255,0.3);transition:all .2s;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid rgba(255,255,255,0.08)}
 .modal-close-area:hover{color:var(--white);border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05)}
 .product-modal-content h2{font-family:"Bebas Neue",sans-serif;font-size:2.2rem;letter-spacing:.06em;color:var(--white);margin-bottom:8px;padding-right:40px;text-shadow:0 0 20px rgba(200,210,255,0.3)}
 .modal-price{font-family:"Bebas Neue",sans-serif;font-size:2.5rem;color:var(--white);letter-spacing:.04em;margin-bottom:24px;text-shadow:0 0 25px rgba(200,210,255,0.5)}
 .product-description{color:rgba(255,255,255,0.42);font-size:.9rem;line-height:1.75;white-space:pre-wrap;border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;margin-bottom:26px}
-.modal-add-cart{
-  width:100%;background:rgba(255,255,255,0.07);color:var(--white);
-  font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem;
-  letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.22);
-  padding:16px;border-radius:4px;cursor:pointer;transition:all .3s;
-}
+.modal-add-cart{ width:100%;background:rgba(255,255,255,0.07);color:var(--white); font-family:"Rajdhani",sans-serif;font-weight:700;font-size:.85rem; letter-spacing:.25em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.22); padding:16px;border-radius:4px;cursor:pointer;transition:all .3s; }
 .modal-add-cart:hover{background:rgba(255,255,255,0.13);border-color:rgba(255,255,255,0.5);box-shadow:0 0 24px rgba(255,255,255,0.12);text-shadow:0 0 10px rgba(255,255,255,0.7)}
-
-/* RESPONSIVE */
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
 @media(max-width:768px){
   .navbar{padding:0 20px}
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:70px;
-    left:0;
-    right:0;
-    background:rgba(4,4,10,.98);
-    backdrop-filter:blur(20px);
-    flex-direction:column;
-    padding:28px 24px;
-    gap:1.8rem;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    z-index:99;
-  }
+  .nav-links{ display:none; position:absolute; top:70px; left:0; right:0; background:rgba(4,4,10,.98); backdrop-filter:blur(20px); flex-direction:column; padding:28px 24px; gap:1.8rem; border-bottom:1px solid rgba(255,255,255,0.1); z-index:99; }
   .nav-links.show{display:flex}
   .menu-toggle{display:block}
   .vitrine-grid{grid-template-columns:1fr}
@@ -532,6 +179,22 @@ footer .container {
   .container{padding:0 20px}
 }
 @media(min-width:769px){.nav-links{display:flex!important}}
+/* ========== ESTILOS ADICIONAIS PARA PERFIL E DROPDOWN ========== */
+.user-menu { position: relative; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.user-avatar { width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+.user-avatar:hover { background: rgba(255,255,255,0.4); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+.dropdown-menu { position: absolute; top: 45px; right: 0; background: rgba(10,10,18,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; width: 200px; display: none; flex-direction: column; z-index: 1000; overflow: hidden; }
+.dropdown-menu a, .dropdown-menu button { padding: 12px 16px; background: none; border: none; color: white; text-align: left; font-family: inherit; font-size: 0.9rem; cursor: pointer; width: 100%; transition: background 0.2s; }
+.dropdown-menu a:hover, .dropdown-menu button:hover { background: rgba(255,255,255,0.1); }
+.profile-section { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(12px); z-index: 2000; display: none; justify-content: center; align-items: center; }
+.profile-card { background: rgba(12,12,20,0.98); border: 1px solid rgba(255,255,255,0.2); border-radius: 24px; max-width: 600px; width: 90%; padding: 2rem; color: white; max-height: 80vh; overflow-y: auto; }
+.profile-card h2 { margin-bottom: 1rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+.profile-info p { margin: 12px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+.orders-list { margin-top: 1.5rem; }
+.orders-list h3 { margin-bottom: 1rem; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.1em; }
+.order-item { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; margin-bottom: 12px; font-size: 0.85rem; }
+.close-profile { float: right; background: rgba(255,255,255,0.1); border: none; color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; transition: 0.2s; }
+.close-profile:hover { background: rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
@@ -542,9 +205,7 @@ footer .container {
 <div id="cartOverlay" class="cart-overlay"></div>
 
 <nav class="navbar">
-  <a href="#home" class="nav-logo">
-    <span class="logo-text">NEXZY</span>
-  </a>
+  <a href="#home" class="nav-logo"><span class="logo-text">NEXZY</span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Início</a></li>
@@ -552,137 +213,35 @@ footer .container {
     <li><a href="#about">Sobre</a></li>
   </ul>
   <div class="nav-actions">
-    <div class="bag-icon" id="bagIcon">
-      <i class="fas fa-shopping-bag"></i>
-      <span id="cartCount" class="cart-count">0</span>
-    </div>
-    <a href="https://discord.gg/5mBW2BWZHP" target="_blank" class="discord-icon">
-      <i class="fab fa-discord"></i>
-    </a>
+    <div class="bag-icon" id="bagIcon"><i class="fas fa-shopping-bag"></i><span id="cartCount" class="cart-count">0</span></div>
+    <a href="https://discord.gg/5mBW2BWZHP" target="_blank" class="discord-icon"><i class="fab fa-discord"></i></a>
   </div>
 </nav>
 
 <main>
-<section id="home">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-glow-ring"></div>
-      <span class="hero-logo-text">NEXZY</span>
-      <h1 class="hero-title">Criamos sistemas<br>que fazem diferença</h1>
-      <p class="hero-sub">Automações, bots e soluções modernas para sua comunidade.</p>
-      <div class="hero-divider"></div>
-      <div class="hero-cta"><a href="#products" class="btn-glow">Ver produtos</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="products">
-  <div class="container">
-    <p class="section-eyebrow">Catálogo</p>
-    <h2 class="section-title">Nossos Produtos</h2>
-    <p class="section-sub">Clique em "Ver detalhes" para mais informações e adicionar ao carrinho.</p>
-    <div class="vitrine-grid">
-      <!-- Produto 1: Bot de Farm Fivem -->
-      <div class="vitrine-card">
-        <span class="card-num">01</span>
-        <div class="card-orb"></div>
-        <div class="card-icon"><i class="fas fa-fire"></i></div>
-        <h3>Bot de Farm<br>Fivem Completo</h3>
-        <p>Automação total para gerenciar farms, dinheiro sujo, ações, lives, compras/vendas e muito mais.</p>
-        <div class="card-divider"></div>
-        <div class="card-price">R$ 20,00</div>
-        <button class="vitrine-btn" data-id="prod1">Ver detalhes →</button>
-      </div>
-      <!-- Produto 2: Nexzy Ticket Bot -->
-      <div class="vitrine-card">
-        <span class="card-num">02</span>
-        <div class="card-orb"></div>
-        <div class="card-icon"><i class="fas fa-ticket-alt"></i></div>
-        <h3>Nexzy Ticket Bot</h3>
-        <p>Sistema automatizado de atendimento por tickets para Discord. Organize suporte em duas categorias (Compras e Denúncias).</p>
-        <div class="card-divider"></div>
-        <div class="card-price">R$ 10,00</div>
-        <button class="vitrine-btn" data-id="prod2">Ver detalhes →</button>
-      </div>
-      <!-- Produto 3: Bot de Partidas Free Fire (substituído) -->
-      <div class="vitrine-card">
-        <span class="card-num">03</span>
-        <div class="card-orb"></div>
-        <div class="card-icon"><i class="fas fa-gamepad"></i></div>
-        <h3>Bot de Partidas<br>Free Fire</h3>
-        <p>Organizador automático com sistema de times, valores e emulador. Cria salas ranqueadas e apostas.</p>
-        <div class="card-divider"></div>
-        <div class="card-price">R$ 15,00</div>
-        <button class="vitrine-btn" data-id="prod3">Ver detalhes →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="about-eyebrow">Nossa história</p>
-        <h2 class="about-heading">Design que<br>entrega resultado</h2>
-        <p>A NEXZY nasceu com a proposta de transformar ideias em projetos modernos, funcionais e profissionais. Trabalhamos com desenvolvimento de bots, scripts, sites, bases personalizadas e soluções digitais feitas para quem quer qualidade, desempenho e presença no mercado.</p>
-        <p>Nosso foco é criar experiências limpas, rápidas e bem estruturadas, sempre buscando inovação, organização e um visual marcante para cada projeto entregue.</p>
-        <p>Mais de 30 projetos já foram desenvolvidos, ajudando clientes a criarem comunidades, automatizarem sistemas e levarem seus serviços para outro nível.</p>
-        <br><a href="https://discord.gg/5mBW2BWZHP" target="_blank" class="btn-glow" style="margin-top:8px">Fale conosco</a>
-      </div>
-      <div class="stats-vitrine">
-        <div class="stat-glass"><div class="stat-number">30+</div><div class="stat-label">projetos realizados</div></div>
-        <div class="stat-glass"><div class="stat-number">24/7</div><div class="stat-label">suporte online</div></div>
-        <div class="stat-glass"><div class="stat-number">100%</div><div class="stat-label">satisfação garantida</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="home"><div class="container"><div class="hero-content"><div class="hero-glow-ring"></div><span class="hero-logo-text">NEXZY</span><h1 class="hero-title">Criamos sistemas<br>que fazem diferença</h1><p class="hero-sub">Automações, bots e soluções modernas para sua comunidade.</p><div class="hero-divider"></div><div class="hero-cta"><a href="#products" class="btn-glow">Ver produtos</a></div></div></div></section>
+<section id="products"><div class="container"><p class="section-eyebrow">Catálogo</p><h2 class="section-title">Nossos Produtos</h2><p class="section-sub">Clique em "Ver detalhes" para mais informações e adicionar ao carrinho.</p><div class="vitrine-grid">
+  <div class="vitrine-card"><span class="card-num">01</span><div class="card-orb"></div><div class="card-icon"><i class="fas fa-fire"></i></div><h3>Bot de Farm<br>Fivem Completo</h3><p>Automação total para gerenciar farms, dinheiro sujo, ações, lives, compras/vendas e muito mais.</p><div class="card-divider"></div><div class="card-price">R$ 20,00</div><button class="vitrine-btn" data-id="prod1">Ver detalhes →</button></div>
+  <div class="vitrine-card"><span class="card-num">02</span><div class="card-orb"></div><div class="card-icon"><i class="fas fa-ticket-alt"></i></div><h3>Nexzy Ticket Bot</h3><p>Sistema automatizado de atendimento por tickets para Discord. Organize suporte em duas categorias (Compras e Denúncias).</p><div class="card-divider"></div><div class="card-price">R$ 10,00</div><button class="vitrine-btn" data-id="prod2">Ver detalhes →</button></div>
+  <div class="vitrine-card"><span class="card-num">03</span><div class="card-orb"></div><div class="card-icon"><i class="fas fa-gamepad"></i></div><h3>Bot de Partidas<br>Free Fire</h3><p>Organizador automático com sistema de times, valores e emulador. Cria salas ranqueadas e apostas.</p><div class="card-divider"></div><div class="card-price">R$ 15,00</div><button class="vitrine-btn" data-id="prod3">Ver detalhes →</button></div>
+</div></div></section>
+<section id="about"><div class="container"><div class="about-grid"><div class="about-text"><p class="about-eyebrow">Nossa história</p><h2 class="about-heading">Design que<br>entrega resultado</h2><p>A NEXZY nasceu com a proposta de transformar ideias em projetos modernos, funcionais e profissionais. Trabalhamos com desenvolvimento de bots, scripts, sites, bases personalizadas e soluções digitais feitas para quem quer qualidade, desempenho e presença no mercado.</p><p>Nosso foco é criar experiências limpas, rápidas e bem estruturadas, sempre buscando inovação, organização e um visual marcante para cada projeto entregue.</p><p>Mais de 30 projetos já foram desenvolvidos, ajudando clientes a criarem comunidades, automatizarem sistemas e levarem seus serviços para outro nível.</p><br><a href="https://discord.gg/5mBW2BWZHP" target="_blank" class="btn-glow" style="margin-top:8px">Fale conosco</a></div><div class="stats-vitrine"><div class="stat-glass"><div class="stat-number">30+</div><div class="stat-label">projetos realizados</div></div><div class="stat-glass"><div class="stat-number">24/7</div><div class="stat-label">suporte online</div></div><div class="stat-glass"><div class="stat-number">100%</div><div class="stat-label">satisfação garantida</div></div></div></div></div></section>
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-simple">
-      <div class="footer-nav">
-        <a href="#home">Início</a>
-        <a href="#products">Produtos</a>
-        <a href="#about">Sobre</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://discord.gg/5mBW2BWZHP" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-      </div>
-      <div class="footer-copyright">
-        <div class="copyright">© 2026 NEXZY — Todos os direitos reservados</div>
-      </div>
-    </div>
-  </div>
-</footer>
+<footer><div class="container"><div class="footer-simple"><div class="footer-nav"><a href="#home">Início</a><a href="#products">Produtos</a><a href="#about">Sobre</a></div><div class="footer-social"><a href="https://discord.gg/5mBW2BWZHP" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a></div><div class="footer-copyright"><div class="copyright">© 2026 NEXZY — Todos os direitos reservados</div></div></div></div></footer>
 
-<div id="cartDrawer" class="cart-drawer">
-  <div class="cart-header"><span>Minha Sacola</span><button id="closeCart" class="close-cart">&times;</button></div>
-  <div id="cartItems" class="cart-items"></div>
-  <div class="cart-footer">
-    <div class="cart-total">Total: <span id="cartTotal">R$ 0,00</span></div>
-    <button id="checkoutBtn" class="checkout-btn">Finalizar Compra</button>
-  </div>
-</div>
-
-<div id="productModal" class="product-modal">
-  <div class="product-modal-content">
-    <span id="closeProductModal" class="modal-close-area">&times;</span>
-    <h2 id="modalProductTitle"></h2>
-    <div class="modal-price" id="modalProductPrice"></div>
-    <div class="product-description" id="modalProductDescription"></div>
-    <button id="modalAddToCartBtn" class="modal-add-cart">Adicionar ao Carrinho</button>
-  </div>
-</div>
+<div id="cartDrawer" class="cart-drawer"><div class="cart-header"><span>Minha Sacola</span><button id="closeCart" class="close-cart">&times;</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div class="cart-total">Total: <span id="cartTotal">R$ 0,00</span></div><button id="checkoutBtn" class="checkout-btn">Finalizar Compra</button></div></div>
+<div id="productModal" class="product-modal"><div class="product-modal-content"><span id="closeProductModal" class="modal-close-area">&times;</span><h2 id="modalProductTitle"></h2><div class="modal-price" id="modalProductPrice"></div><div class="product-description" id="modalProductDescription"></div><button id="modalAddToCartBtn" class="modal-add-cart">Adicionar ao Carrinho</button></div></div>
 
 <script>
+// ========== DADOS DOS PRODUTOS ==========
 const productsData={
   prod1:{id:"prod1",name:"Bot de Farm Fivem Completo",price:20,description:"🚀 BOT DE FARM FIVEM COMPLETO\n\n✅ O que você recebe:\n• Executável pronto (Windows)\n• Código fonte Python + Discord.py\n• Guia de instalação\n• Suporte Discord 30 dias\n\n📋 FUNCIONALIDADES:\n\n1️⃣ Farm de Produtos\n   - CHUMBO, CÁPSULA e PÓLVORA com prints\n   - Alertas de meta (600 unidades)\n\n2️⃣ Dinheiro Sujo com comprovante\n\n3️⃣ Fechamento Semanal\n   - 25% lavagem, 60% facção, 40% membro\n\n4️⃣ Compra e Venda de munição\n\n5️⃣ Sistema de Ações com pagamento proporcional\n\n6️⃣ Notificações de Lives (Twitch, YouTube, TikTok, Kick)\n\n7️⃣ Recrutamento com aprovação de admin\n\n8️⃣ Ranking geral de produção\n\n9️⃣ Canais privados por usuário\n\n🔟 Backup automático\n\n⚠️ Req: Windows 10/11, Python 3.8+, Token Discord\n🔒 Garantia 7 dias – reembolso total se não funcionar"},
   prod2:{id:"prod2",name:"Nexzy Ticket Bot",price:10,description:"📌 Descrição do Produto\n\nO Nexzy Ticket Bot é um sistema automatizado de atendimento por tickets para servidores Discord. Com ele, você organiza o suporte em duas categorias (Compras e Denúncias), agiliza o atendimento e dá mais profissionalismo ao seu servidor.\n\nIdeal para: Lojas de revenda, servidores de games, comunidades de suporte, projetos de criptomoedas, servidores de parcerias, etc.\n\n⚙️ Funcionalidades\n✅ Painel interativo com menu suspenso para escolher o tipo de ticket.\n✅ Categorias separadas (Compras / Denúncia) – cada ticket vai para sua categoria correta.\n✅ Canais privados – apenas o usuário e a equipe (staff) têm acesso.\n✅ Botão \"Fechar Ticket\" – com confirmação e exclusão automática do canal.\n✅ Cooldown inteligente – evita spam de tickets (tempo configurável).\n✅ Persistência total – os botões continuam funcionando mesmo após reiniciar o bot.\n✅ Comando único !painel para enviar o painel (somente administradores).\n✅ Código limpo e comentado – fácil de dar manutenção ou personalizar.\n✅ Configuração via arquivo .env – sem expor tokens ou IDs no código.\n\n🎁 O que você recebe\nCódigo-fonte completo (Python + discord.py)\nArquivo .env.example para configurar rapidamente\nrequirements.txt com todas as dependências\nREADME.md com instruções de instalação e uso\nSuporte via Discord por 7 dias (instalação e dúvidas)\n\n🧰 Requisitos\nServidor Discord com permissões de Gerenciar Canais\nPython 3.8 ou superior instalado\nBot criado no Discord Developer Portal"},
   prod3:{id:"prod3",name:"Bot de Partidas Free Fire",price:15,description:"🤖 Bot de Partidas Free Fire – Organizador Automático com Sistema de Times, Valores e Emulador\n⚡ Sistema completo para criar salas ranqueadas e apostas no seu servidor de Free Fire, com times, valores, emulador e pareamento automático!\n\n🎯 O que o bot faz?\nEle organiza partidas competitivas de Free Fire de forma totalmente automática. Os jogadores entram em times (Time 1, Time 2 e Time 3 no modo misto), escolhem se jogam no emulador ou mobile, e quando um time fecha, o bot cria um canal privado de confirmação com os jogadores e a staff. Após a confirmação, um canal final é criado para a partida.\n\nIdeal para servidores de:\nApostas Free Fire\nOrganização de torneios (ranqueada)\nComunidades de duplas e squads\nServidores de \"misto\" (emulador + mobile)\n\n🔥 Funcionalidades\n✅ Painéis interativos por modo e valor\nAté 20 modos diferentes (ex: 1v1-mobile, 2v2-emu, 4v4-misto, 3v3-emulador, etc.)\n14 valores de aposta (R$ 0,50 até R$ 100,00) – todos configuráveis via .env\nCada modo + valor gera um painel único com botões de times\n\n✅ Sistema de times\nTimes 1 e 2 (padrão) e Time 3 (apenas no modo misto)\nBotões: Entrar Time 1 / Time 2 / Time 3 / Sair\nAtualização automática dos painéis em tempo real\n\n✅ Pareamento por emulador (modo misto)\nJogadores escolhem entre 1, 2 ou 3 emus (configurável)\nO bot forma duplas com o mesmo número de emulador\nExibe filas separadas por emulador no painel\n\n✅ Criação automática de canais\nCanal de confirmação – apenas os dois jogadores e a staff vêem\nBotões para escolher Gelo Infinito / Gelo Normal (se o modo permitir)\nBotões Confirmar / Cancelar – só avança quando ambos confirmarem e o gelo estiver definido\nCanal final da partida – staff e jogadores para acompanhar a disputa\n\n✅ Segurança e permissões\nCargos de administrador (ADM_ROLE_ID) têm acesso a todos os canais privados\nO bot verifica permissões de canal antes de enviar painéis\nLimpeza automática de painéis antigos ao reiniciar\n\n✅ Personalização total via .env\nToken do bot\nCargo da staff\nIDs dos canais para cada modo (ex: CANAL_1V1_MOBILE, CANAL_4V4_MISTO, etc.)\nNome do autor do painel (exibe no embed)\n\n🎮 Modos de jogo pré-configurados\nTipo	Exemplos\nEmulador	1v1-emu, 2v2-emu, 3v3-emu, 4v4-emu\nMobile	1v1-mobile, 2v2-mobile, 3v3-mobile, 4v4-mobile\nMisto (emulador + mobile)	1v1-misto, 2v2-misto, 3v3-misto, 4v4-misto\nMobilador	1v1-mobilador, 2v2-mobilador, etc.\nEmulador explícito	1v1-emulador, 2v2-emulador, etc.\nVocê pode adicionar ou remover modos facilmente no array MODOS do código.\n\n📦 O que você recebe\nCódigo-fonte JavaScript (Node.js + discord.js v14)\nArquivo .env.example com todas as variáveis explicadas\npackage.json e package-lock.json (dependências)\nImagem de exemplo assets/painel.png (você pode trocar)\nDocumentação resumida (README)\nSuporte básico por 7 dias via Discord\n\n🧰 Requisitos técnicos\nNode.js 18 ou superior\nBot do Discord com permissões: Send Messages, Embed Links, Attach Files, Manage Channels, Read Message History, View Channel\nServidor Discord com categorias e canais criados"}
 };
+
+// ========== CARRINHO (original) ==========
 let cart=[];
 const $=id=>document.getElementById(id);
 function updateCartUI(){
@@ -704,12 +263,6 @@ function addToCart(p){const e=cart.find(i=>i.id===p.id);e?e.quantity++:cart.push
 function openCart(){$("cartDrawer").classList.add("open");$("cartOverlay").classList.add("active");document.body.style.overflow="hidden"}
 function closeCartFn(){$("cartDrawer").classList.remove("open");$("cartOverlay").classList.remove("active");document.body.style.overflow=""}
 $("bagIcon").addEventListener("click",openCart);$("closeCart").addEventListener("click",closeCartFn);$("cartOverlay").addEventListener("click",closeCartFn);
-$("checkoutBtn").addEventListener("click",()=>{
-  if(!cart.length){alert("Sacola vazia.");return}
-  const t=cart.reduce((s,i)=>s+i.price*i.quantity,0);
-  alert("✅ Compra finalizada!\nTotal: R$ "+t.toFixed(2)+"\nObrigado pela confiança na NEXZY!");
-  cart=[];updateCartUI();saveCart();closeCartFn();
-});
 let currentProduct=null;
 document.querySelectorAll(".vitrine-btn").forEach(b=>b.addEventListener("click",()=>{
   const p=productsData[b.dataset.id];if(!p)return;
@@ -728,248 +281,184 @@ document.querySelectorAll(".vitrine-card").forEach(c=>obs.observe(c));
 const menuToggle=$("menuToggle"),navLinks=$("navLinks");
 if(menuToggle){menuToggle.addEventListener("click",()=>navLinks.classList.toggle("show"));document.addEventListener("click",(e)=>{if(!navLinks.contains(e.target)&&!menuToggle.contains(e.target))navLinks.classList.remove("show")})}
 loadCart();
-</script>
 
-<!-- Sistema de Login Integrado (sem botão "Entrar" extra) -->
-<script>
-// Sistema de login com apenas um ícone de usuário na navbar
+// ========== SISTEMA DE LOGIN COMPLETO (com nickname, código de verificação e perfil) ==========
 let currentUser = null;
+let pendingEmail = null;
+let waitingForCode = false;
 
-// Estilos do modal (já existentes, garantindo que não duplique)
-if (!document.getElementById('authModal')) {
-  const style = document.createElement('style');
-  style.textContent = `
-    .modal-login {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(12px);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-    }
-    .modal-login.active { display: flex; }
-    .modal-login-content {
-      background: rgba(10,10,18,0.96);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 24px;
-      padding: 2rem;
-      width: 90%;
-      max-width: 420px;
-      color: white;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-    .modal-login-content h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .modal-login-content input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      color: white;
-      font-family: inherit;
-    }
-    .modal-login-content button {
-      width: 100%;
-      margin-top: 16px;
-      padding: 12px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 40px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .modal-login-content button:hover {
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 0 12px rgba(255,255,255,0.2);
-    }
-    .toggle-auth {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-      cursor: pointer;
-    }
-    .toggle-auth:hover { color: white; }
-    .user-menu {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-left: 20px;
-    }
-    .user-avatar {
-      width: 36px;
-      height: 36px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .user-avatar:hover {
-      background: rgba(255,255,255,0.3);
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-    }
-    .logout-btn {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      cursor: pointer;
-      color: rgba(255,255,255,0.7);
-    }
-    .logout-btn:hover {
-      background: rgba(255,80,80,0.3);
-      border-color: rgba(255,80,80,0.6);
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-// Criar modal de login (se não existir)
+// Cria modal de autenticação (se não existir)
 if (!document.getElementById('authModal')) {
   const modalHTML = `
     <div id="authModal" class="modal-login">
       <div class="modal-login-content">
         <h3 id="modalTitle">Entrar</h3>
-        <input type="email" id="loginEmail" placeholder="Seu email" autocomplete="email">
-        <input type="password" id="loginPassword" placeholder="Sua senha" autocomplete="current-password">
+        <input type="email" id="loginEmail" placeholder="Seu e-mail" autocomplete="email">
+        <div id="nicknameGroup" style="display:none;">
+          <input type="text" id="nickname" placeholder="Seu nickname (ex: JohnDoe)" autocomplete="off">
+        </div>
+        <input type="password" id="loginPassword" placeholder="Sua senha">
+        <input type="text" id="verificationCode" placeholder="Código de 6 dígitos" style="display:none;" autocomplete="off">
         <div id="authError" style="color:#ff8a7a; font-size:0.8rem; margin-top:8px;"></div>
         <button id="submitAuthBtn">Entrar</button>
         <div class="toggle-auth" id="toggleAuthMode">Não tem conta? Criar conta</div>
-        <div class="toggle-auth" style="margin-top:8px;" id="closeModalBtn">Fechar</div>
+        <div class="toggle-auth" id="closeModalBtn">Fechar</div>
       </div>
     </div>
   `;
   document.body.insertAdjacentHTML('beforeend', modalHTML);
 }
 
-// Injetar apenas o ícone de usuário (sem botão "Entrar" separado)
+// Injetar ícone de usuário com dropdown
 function injectUserIcon() {
   const navActions = document.querySelector('.nav-actions');
   if (!navActions || document.getElementById('nexzyUserMenu')) return;
-
   const userMenu = document.createElement('div');
   userMenu.id = 'nexzyUserMenu';
   userMenu.className = 'user-menu';
   userMenu.innerHTML = `
-    <div class="user-avatar" id="userAvatarBtn">
-      <i class="fas fa-user"></i>
+    <div class="user-avatar" id="userAvatarBtn"><i class="fas fa-user"></i></div>
+    <div id="dropdownMenu" class="dropdown-menu">
+      <button id="profileBtn">👤 Meu Perfil</button>
+      <button id="logoutDropdownBtn">🚪 Sair</button>
     </div>
-    <span id="userEmailDisplay" style="font-size:0.8rem; display:none;"></span>
-    <button class="logout-btn" id="logoutButton" style="display:none;">Sair</button>
   `;
   navActions.appendChild(userMenu);
-
-  document.getElementById('userAvatarBtn').addEventListener('click', () => {
-    if (currentUser) {
-      alert(`👤 Logado como: ${currentUser.email}\n📦 Seus pedidos são salvos automaticamente.`);
-    } else {
-      openModal();
-    }
+  document.getElementById('userAvatarBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const menu = document.getElementById('dropdownMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
   });
-  document.getElementById('logoutButton')?.addEventListener('click', logout);
+  document.getElementById('profileBtn').addEventListener('click', showProfile);
+  document.getElementById('logoutDropdownBtn').addEventListener('click', logout);
+  document.addEventListener('click', () => {
+    const menu = document.getElementById('dropdownMenu');
+    if (menu) menu.style.display = 'none';
+  });
 }
 
 function openModal() {
   const modal = document.getElementById('authModal');
   if (modal) modal.classList.add('active');
-  document.getElementById('modalTitle').innerText = 'Entrar';
-  document.getElementById('submitAuthBtn').innerText = 'Entrar';
-  document.getElementById('toggleAuthMode').innerText = 'Não tem conta? Criar conta';
-  document.getElementById('loginEmail').value = '';
-  document.getElementById('loginPassword').value = '';
-  document.getElementById('authError').innerText = '';
-  isLoginMode = true;
+  resetModal();
 }
-
 function closeModal() {
   const modal = document.getElementById('authModal');
   if (modal) modal.classList.remove('active');
 }
-
-let isLoginMode = true;
+function resetModal() {
+  const isLogin = document.getElementById('modalTitle').innerText === 'Entrar';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginPassword').value = '';
+  document.getElementById('verificationCode').value = '';
+  document.getElementById('nickname').value = '';
+  document.getElementById('authError').innerText = '';
+  document.getElementById('verificationCode').style.display = 'none';
+  document.getElementById('nicknameGroup').style.display = 'none';
+  document.getElementById('loginPassword').style.display = 'block';
+  waitingForCode = false;
+  pendingEmail = null;
+  if (!isLogin) {
+    // se estiver no modo "criar conta", deixa o botão como "Enviar código"
+    document.getElementById('submitAuthBtn').innerText = 'Enviar código';
+  } else {
+    document.getElementById('submitAuthBtn').innerText = 'Entrar';
+  }
+}
 function toggleMode() {
-  isLoginMode = !isLoginMode;
   const title = document.getElementById('modalTitle');
   const btn = document.getElementById('submitAuthBtn');
   const toggleText = document.getElementById('toggleAuthMode');
-  if (isLoginMode) {
+  if (title.innerText === 'Entrar') {
+    title.innerText = 'Criar conta';
+    btn.innerText = 'Enviar código';
+    toggleText.innerText = 'Já tem conta? Fazer login';
+    resetModal();
+  } else {
     title.innerText = 'Entrar';
     btn.innerText = 'Entrar';
     toggleText.innerText = 'Não tem conta? Criar conta';
-  } else {
-    title.innerText = 'Criar conta';
-    btn.innerText = 'Registrar';
-    toggleText.innerText = 'Já tem conta? Fazer login';
+    resetModal();
   }
-  document.getElementById('authError').innerText = '';
 }
-
 async function handleAuth() {
   const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
   const errorDiv = document.getElementById('authError');
   errorDiv.innerText = '';
+  if (!email) { errorDiv.innerText = 'Digite seu e-mail.'; return; }
 
-  if (!email || !password) {
-    errorDiv.innerText = 'Preencha email e senha.';
-    return;
-  }
+  const isLoginMode = document.getElementById('modalTitle').innerText === 'Entrar';
 
-  const endpoint = isLoginMode ? '/api/login' : '/api/register';
-  try {
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Erro na autenticação');
-    localStorage.setItem('nexzy_token', data.token);
-    currentUser = data.user;
-    updateUIAfterLogin();
-    closeModal();
-  } catch (err) {
-    errorDiv.innerText = err.message;
+  if (isLoginMode) {
+    const password = document.getElementById('loginPassword').value;
+    if (!password) { errorDiv.innerText = 'Digite sua senha.'; return; }
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erro no login');
+      localStorage.setItem('nexzy_token', data.token);
+      currentUser = data.user;
+      updateUIAfterLogin();
+      closeModal();
+    } catch (err) { errorDiv.innerText = err.message; }
+  } else {
+    // Modo de criação de conta
+    if (!waitingForCode) {
+      // Primeira etapa: enviar código
+      try {
+        const res = await fetch('/api/send-verification', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erro ao enviar código');
+        waitingForCode = true;
+        pendingEmail = email;
+        document.getElementById('modalTitle').innerText = 'Verifique seu e-mail';
+        document.getElementById('submitAuthBtn').innerText = 'Confirmar cadastro';
+        document.getElementById('verificationCode').style.display = 'block';
+        document.getElementById('nicknameGroup').style.display = 'block';
+        document.getElementById('loginPassword').placeholder = 'Sua senha';
+        errorDiv.innerHTML = '📧 Código enviado! Insira o código, nickname e senha.';
+      } catch (err) { errorDiv.innerText = err.message; }
+    } else {
+      // Segunda etapa: confirmar com código, nickname e senha
+      const code = document.getElementById('verificationCode').value;
+      const nickname = document.getElementById('nickname').value;
+      const password = document.getElementById('loginPassword').value;
+      if (!code || !nickname || !password) {
+        errorDiv.innerText = 'Preencha código, nickname e senha.';
+        return;
+      }
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: pendingEmail, password, code, nickname })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erro no registro');
+        localStorage.setItem('nexzy_token', data.token);
+        currentUser = data.user;
+        updateUIAfterLogin();
+        closeModal();
+      } catch (err) { errorDiv.innerText = err.message; }
+    }
   }
 }
-
 function updateUIAfterLogin() {
-  const logoutBtn = document.getElementById('logoutButton');
-  const userEmailSpan = document.getElementById('userEmailDisplay');
-  if (logoutBtn) logoutBtn.style.display = 'block';
-  if (userEmailSpan) {
-    userEmailSpan.style.display = 'inline';
-    userEmailSpan.innerText = currentUser?.email.split('@')[0] || 'user';
-  }
+  // Mostrar o dropdown já está ok, nenhum botão extra necessário
 }
-
 function logout() {
   localStorage.removeItem('nexzy_token');
   currentUser = null;
-  const logoutBtn = document.getElementById('logoutButton');
-  const userEmailSpan = document.getElementById('userEmailDisplay');
-  if (logoutBtn) logoutBtn.style.display = 'none';
-  if (userEmailSpan) userEmailSpan.style.display = 'none';
+  window.location.reload();
 }
-
 async function restoreSession() {
   const token = localStorage.getItem('nexzy_token');
   if (!token) return;
@@ -980,42 +469,74 @@ async function restoreSession() {
     if (res.ok) {
       const data = await res.json();
       currentUser = data.user;
-      updateUIAfterLogin();
     } else {
       localStorage.removeItem('nexzy_token');
     }
-  } catch (err) {
-    console.warn('Falha ao restaurar sessão');
-  }
+  } catch(e) { console.warn(e); }
 }
-
-// Substituir o checkout original para exigir login
+async function showProfile() {
+  if (!currentUser) return;
+  const token = localStorage.getItem('nexzy_token');
+  if (!token) return;
+  try {
+    const resOrders = await fetch('/api/orders', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    const orders = await resOrders.json();
+    let ordersHtml = '<div class="orders-list"><h3>📦 Histórico de pedidos</h3>';
+    if (!orders.length) ordersHtml += '<p>Nenhum pedido ainda.</p>';
+    else {
+      orders.forEach(order => {
+        const items = typeof order.items === 'string' ? JSON.parse(order.items) : order.items;
+        const itemsText = items.map(i => `${i.name} x${i.quantity}`).join(', ');
+        ordersHtml += `<div class="order-item"><strong>Pedido #${order.id}</strong><br>${itemsText}<br>Total: R$ ${parseFloat(order.total).toFixed(2)}<br>Status: ${order.status}<br><small>${new Date(order.created_at).toLocaleString()}</small></div>`;
+      });
+    }
+    ordersHtml += '</div>';
+    const profileHtml = `
+      <div id="profileOverlay" class="profile-section">
+        <div class="profile-card">
+          <button class="close-profile" onclick="closeProfile()">✕ Fechar</button>
+          <h2>👤 Meu Perfil</h2>
+          <div class="profile-info">
+            <p><strong>E-mail:</strong> ${currentUser.email}</p>
+            <p><strong>Nickname:</strong> ${currentUser.nickname || 'não definido'}</p>
+            <p><strong>Membro desde:</strong> ${new Date(currentUser.created_at).toLocaleDateString()}</p>
+          </div>
+          ${ordersHtml}
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', profileHtml);
+    document.getElementById('profileOverlay').style.display = 'flex';
+    document.getElementById('profileOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('profileOverlay')) closeProfile();
+    });
+  } catch(e) { console.error(e); alert('Erro ao carregar perfil'); }
+}
+window.closeProfile = function() {
+  const el = document.getElementById('profileOverlay');
+  if (el) el.remove();
+};
 function patchCheckout() {
-  const originalCheckoutBtn = document.getElementById('checkoutBtn');
-  if (!originalCheckoutBtn) return;
-  const newCheckout = originalCheckoutBtn.cloneNode(true);
-  originalCheckoutBtn.parentNode.replaceChild(newCheckout, originalCheckoutBtn);
-  newCheckout.addEventListener('click', async () => {
+  const originalBtn = document.getElementById('checkoutBtn');
+  if (!originalBtn) return;
+  const newBtn = originalBtn.cloneNode(true);
+  originalBtn.parentNode.replaceChild(newBtn, originalBtn);
+  newBtn.addEventListener('click', async () => {
     const token = localStorage.getItem('nexzy_token');
     if (!token) {
-      alert('🔐 Você precisa estar logado para finalizar a compra.');
+      alert('🔐 Faça login para finalizar a compra.');
       openModal();
       return;
     }
-    if (typeof window.cart === 'undefined' || !window.cart.length) {
-      alert('Sacola vazia.');
-      return;
-    }
-    const cartItems = window.cart;
-    const itemsForAPI = cartItems.map(i => ({ name: i.name, quantity: i.quantity, price: i.price }));
-    const total = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
+    if (!cart.length) { alert('Sacola vazia.'); return; }
+    const itemsForAPI = cart.map(i => ({ name: i.name, quantity: i.quantity, price: i.price }));
+    const total = cart.reduce((s,i) => s + i.price * i.quantity, 0);
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ items: itemsForAPI, total })
       });
       const data = await res.json();
@@ -1024,26 +545,22 @@ function patchCheckout() {
         window.location.href = data.init_point;
       } else {
         alert(`✅ Pedido #${data.orderId} registrado! (simulação sem pagamento real)`);
-        window.cart = [];
-        if (typeof updateCartUI === 'function') updateCartUI();
-        if (typeof saveCart === 'function') saveCart();
-        if (typeof closeCartFn === 'function') closeCartFn();
+        cart = [];
+        updateCartUI();
+        saveCart();
+        closeCartFn();
       }
-    } catch (err) {
-      alert('Erro no checkout: ' + err.message);
-    }
+    } catch(err) { alert('Erro no checkout: ' + err.message); }
   });
 }
-
 // Inicialização
 window.addEventListener('DOMContentLoaded', () => {
   injectUserIcon();
   restoreSession();
   patchCheckout();
-
-  document.getElementById('submitAuthBtn')?.addEventListener('click', handleAuth);
-  document.getElementById('toggleAuthMode')?.addEventListener('click', toggleMode);
-  document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
+  document.getElementById('submitAuthBtn').addEventListener('click', handleAuth);
+  document.getElementById('toggleAuthMode').addEventListener('click', toggleMode);
+  document.getElementById('closeModalBtn').addEventListener('click', closeModal);
   window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('authModal')) closeModal();
   });
