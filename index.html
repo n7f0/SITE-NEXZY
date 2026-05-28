@@ -729,5 +729,6 @@ const menuToggle=$("menuToggle"),navLinks=$("navLinks");
 if(menuToggle){menuToggle.addEventListener("click",()=>navLinks.classList.toggle("show"));document.addEventListener("click",(e)=>{if(!navLinks.contains(e.target)&&!menuToggle.contains(e.target))navLinks.classList.remove("show")})}
 loadCart();
 </script>
+<script src="auth.js"></script>
 </body>
 </html>
